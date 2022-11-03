@@ -1,0 +1,35 @@
+# file opened: c:\Users\cbbbb\Dropbox\PC\Documents\ING.INF\2∫ING.INF\1∫Cuatri\AOC\Laboratorio\plantilla_AOC_2021_22_VSCODE\practicafinal.asm
+ 1    0000               	;------------------------------------------------
+ 2    0000              	;       UFV - Arquitectura de Computadores
+ 3    0000              	;------------------------------------------------
+ 4    0000              	; Programaci√≥n ensamblador Z80
+ 5    0000              	; Pr√°ctica 1 : Barras verticales
+ 6    0000              	; Cuatro posibles soluciones
+ 7    0000              	;------------------------------------------------
+ 8    0000              	; Curso 2021/2022 - Daniel Le√≥n
+ 9    0000              	;------------------------------------------------
+10    0000
+11    0000              		DEVICE ZXSPECTRUM48
+12    0000              		org $8000						; inicio del programa - directiva de ensamblador (afecta al c√°lculo de etiquetas)
+13    8000              inicio:
+14    8000 F3                   di              ; Deshabilitar interrupciones
+15    8001 31 00 00             ld sp,0         ; Establecer el puntero de pila en la parte alta de la memoria
+16    8004
+17    8004              ;-------------------------------------------------------------------------------------------------
+18    8004              ;C√≥digo del estudiante
+19    8004
+20    8004              bucle1:
+21    8004 3E 08                ld a,8 ;color del paper azul
+22    8006 21 29 58             ld hl, $5829 ;guardo el valor donde empieza a pintar
+23    8009 06 0F                ld b,15 ;numero de repeticiones
+24    800B
+25    800B              bucle2:
+26    800B 77                   ld (hl),a
+27    800C 23                   inc hl
+28    800D 10 FC                djnz bucle2
+29    800F              ;-------------------------------------------------------------------------------------------------
+30    800F 18 FE        fin:            jr fin          ; Bucle infinito
+31    8011
+32    8011
+33    8011
+# file closed: c:\Users\cbbbb\Dropbox\PC\Documents\ING.INF\2∫ING.INF\1∫Cuatri\AOC\Laboratorio\plantilla_AOC_2021_22_VSCODE\practicafinal.asm
